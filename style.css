@@ -3,9 +3,17 @@
     margin: 0;
     box-sizing: border-box;
 }
+li{
+    list-style: none;
+}
+a{
+    color:black;
+}
 body{
     font-family: "Playfair",sans-serif,serif;
     background-color: #F8F7F4;
+    height: 100%;
+    width: 100%;
 }
 
 .nav{
@@ -136,7 +144,7 @@ body{
 }
 .showcase .bottom .container{
     flex-shrink: 0;
-    width: 130%;
+    /* width: 130%; */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -178,7 +186,6 @@ body{
     height: 100%;
     object-fit: cover;
     display: block;
-    /* z-index: 1; */
 }
 .showcase .bottom .elemt video{
     width: 100%;
@@ -226,7 +233,7 @@ body{
 
 
 .elements-page{
-    height: 100vh;
+    height: auto;
     width: 100%;
     /* background-color: orange; */
     padding: 2vw 0;
@@ -245,7 +252,7 @@ body{
     grid-template-columns: repeat(4, 1fr);
     /* background-color:pink; */
     grid-column-gap: 3vw;
-    grid-row-gap: 4vw;
+    grid-row-gap: 1vw;
     padding: 1vw 4vw;
     justify-self: center;
     align-self: center;
@@ -258,11 +265,11 @@ body{
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
-    transition: all ease 3s;
+    transition: all ease 2s;
 
 }
 .element-cards .card{
-    background-color: pink;
+    /* background-color: pink; */
     height: 17vw;
     width: 21vw;
     border: 1px solid black;
@@ -273,11 +280,12 @@ body{
 
 .element-cards .card:hover .card-overlay{
     bottom: 0;
-    left:0;
+    left:0; 
+    cursor: pointer;
 
 }
 .element-cards .card .card-overlay{
-    height:35%;
+    height:30%;
     width: 100%;
     /* background-color: pink; */
     position: absolute;
@@ -285,12 +293,12 @@ body{
     left:0;
     /* border-bottom-left-radius:inherit;
     border-bottom-right-radius:inherit; */
-    transition: all ease 1s;
+    transition: all ease .5s;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 12px;
-    background: linear-gradient(black rgba(255, 255, 255, 0.116));
+    background: linear-gradient(transparent,#0000009c);
 }
 .element-cards .card .card-overlay .product-name{
     font-size: 18px;
@@ -320,7 +328,11 @@ doesn't work as i wanted it to
     height: 100%;
     object-fit: cover;
 }
-
+.card>video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 .element-cards .bottom{
     display: flex;
@@ -382,4 +394,232 @@ doesn't work as i wanted it to
 .element-cards .bottom-right .number{
     color: black;
     font-weight: 400;
+}
+
+.elements-page button.browseMore{
+    display: block;
+    padding: 15px 25px;
+    margin: 40px auto;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 30px;
+    cursor: pointer;
+
+    &:hover{
+        color: #3f3f3f;
+    }
+}
+
+.getStartedContainer{
+    height:calc(100vh - 300px);
+    background-color:#FFDA79 ;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:5vh 10vw;
+}
+.getStarted{
+    /* background-color: pink; */
+    width:60%;
+    height: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.getStarted h1{
+    font-size: 5vw;
+    font-weight: 500;
+}
+.getStarted h3{
+    font-size: 22px;
+    font-weight: 400;
+    color: #3f3f3f;
+}
+.getStarted button{
+    padding:20px 25px;
+    border:none;
+    border-radius: 30px;
+    background-color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin:5px 0;
+}
+.getStarted button:nth-child(1){
+    background-color: #0D0C22;
+    color: white;
+    margin-right: 10px;
+}
+.catagories{
+    height:300px;
+    width: 100%;
+    /* background-color: orangered; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+    /* justify-content: space-between; */
+    /* flex-wrap: nowrap; */
+   
+}
+.catagories:hover .container-catagory{
+    animation-play-state: paused;
+}
+
+.catagories .container-catagory{
+    display: flex;
+    /* justify-content: space-between; */
+    gap:40px;
+    animation-name: catagory;
+  
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    margin-right:40px ;
+}
+.catagories .catagory{
+    flex-shrink: 0;
+    height:204px;
+    width: 220px;
+    /* background-color: pink; */
+    /* overflow: hidden; */
+}
+.catagory img{
+    width: 100%;
+    height: 85%;
+    border-radius: 10px;
+}
+
+
+.catagory h3{
+    font-size: 16px;
+    padding: 6px 6px;
+}
+
+@keyframes catagory{
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(calc(-100% - 20px));
+    }
+}
+
+footer{
+    height:25vh;
+    padding: 14px 5vw;
+    width: 80%;
+    margin: 0 auto;
+    /* background-color: orangered; */
+    margin-bottom: 4vh;
+}
+
+footer .top{
+    height: 50%;
+    /* background-color: pink; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .logo{
+    /* width: 20%; */
+    height: 3.5vh;
+    /* background-color:yellow; */
+}
+footer .top-center{
+    display: flex;
+    width: 65%;
+    /* height: 100%; */
+    /* background-color: aquamarine; */
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 600;
+    flex-wrap: wrap;
+}
+footer .top-center li{
+    padding: 4px 8px;
+}
+footer .top-right i{
+    font-size: 20px;
+    padding: 2px;
+}
+
+footer .bottom{
+    /* background-color: red; */
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 20px;
+}
+footer .bottom-left{
+    display: flex;
+    /* background-color: pink; */
+    justify-content: space-between;
+    width: 30%;
+}
+.bottom ul li{
+    font-size: 15px;
+    font-weight: 300;
+    color: #424242;
+}
+.footer .bottom-right{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    /* background-color: pink; */
+
+}
+
+
+
+@media (max-width:1300px) {
+    .elements-page .element-cards{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .element-cards .card-container{
+        width:28vw;
+        height:28vw;
+    }
+    .element-cards .card{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width:950px) {
+    .elements-page .element-cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .element-cards .card-container{
+        width:100%;
+        height:40vw;
+    }
+    .element-cards .card{
+        width: 100%;
+        height: 100%;
+    }
+    @media (max-width:550px) {
+        .elements-page .element-cards{
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .element-cards .card-container{
+            width:100%;
+            height:100%;
+        }
+        .element-cards .card{
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
